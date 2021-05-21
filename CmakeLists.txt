@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.10)
+
+# set the project name
+project(Tutorial)
+
+# add the executable
+add_executable(Tutorial src/main.cpp)
+target_include_directories(Tutorial PUBLIC "${PROJECT_SOURCE_DIR}/include")
+target_link_libraries(Tutorial PRIVATE "${PROJECT_SOURCE_DIR}/clib/target/debug/libclib.a")
+set_target_properties(Tutorial PROPERTIES
+        CXX_STANDARD            14
+        CXX_STANDARD_REQUIRED   On
+        CXX_EXTENSIONS          Off)
